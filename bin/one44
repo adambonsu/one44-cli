@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'one44'
+require 'one44/adaptors/io/cli'
+require 'one44-cli'
+
+
+include One44::Adaptors::IO::CLI
+
+test = One44::Test.new(STDOUT)
+test.start('indigo', randomise(questions))
+test.questions.each_with_index do |_question, index|
+  test.provide clean(answer), index
+  STDOUT.puts
+  STDOUT.print "#{test.questions[index + 1]}: " unless test.questions[index] == test.questions.last
+end
+STDOUT.print 'Result: '
+STDOUT.print test.result.to_s
+STDOUT.puts
