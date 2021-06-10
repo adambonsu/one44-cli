@@ -7,12 +7,16 @@ require 'one44-cli/version'
 Gem::Specification.new do |s|
   s.name                  = 'one44-cli'
   s.version               = One44::VERSION
-  s.summary               = 'CLI User Interface for one44'
-  s.description           = 'Marks math problems'
+  s.platform              = Gem::Platform::RUBY
+  s.summary               = %q{CLI User Interface for one44}
+  s.description           = %q{Marks math problems'}
   s.authors               = ['Adam Bonsu']
   s.email                 = 'adam@bonsu.io'
-  s.files                 = Dir['lib/**/*'] + Dir['Gemfile*']
+  s.files                 = Dir['lib/**/*'] + Dir['bin/one44-cli']
+  s.executables           = %w[one44-cli]
+  s.add_dependency 'one44', '0.0.2'
   s.homepage              = 'https://github.com/adambonsu/one44-cli'
   s.license               = 'MIT'
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 2.7.2'
+  s.extra_rdoc_files      = Dir["README.md", "CHANGELOG.md"]
 end
