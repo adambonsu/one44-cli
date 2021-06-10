@@ -19,4 +19,7 @@ Gem::Specification.new do |s|
   s.license               = 'MIT'
   s.required_ruby_version = '>= 2.7.2'
   s.extra_rdoc_files      = Dir["README.md", "CHANGELOG.md"]
+  s.metadata              = {
+    'changelog_uri' => 'https://github.com/adambonsu/one44-cli/blob/main/CHANGELOG.md'
+  }
 end
