@@ -12,5 +12,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Changelog reference in gem [@adambonsu](https://github.com/adambonsu).
 
 
-[Unreleased]: https://github.com/adambonsu/rack-override-path/compare/v0.0.3...HEAD
+[Unreleased]: https://github.com/adambonsu/one44-cli/compare/v0.0.3...HEAD
 [0.0.3]: https://github.com/adambonsu/one44-cli/v0.0.3
