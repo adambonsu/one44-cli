@@ -17,5 +17,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 
 [Unreleased]: https://github.com/adambonsu/one44-cli/compare/v0.0.4...HEAD
-[0.0.4]: https://github.com/adambonsu/one44-cli/v0.0.3..v0.0.4
-[0.0.3]: https://github.com/adambonsu/one44-cli/v0.0.3
+[0.0.4]: https://github.com/adambonsu/one44-cli/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/adambonsu/one44-cli/releases/tag/v0.0.3
