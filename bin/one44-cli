@@ -11,7 +11,9 @@ include One44::CLI::Helpers
 include One44::CLI::Optparse
 
 test = One44::Test.new($stdout)
-test.start('indigo', randomise(questions))
+
+ordered_questions = $one44_cli_options[:question_order] == :random ? randomise(questions) : questions
+test.start('indigo', ordered_questions)
 test.questions.each_with_index do |_question, index|
   test.provide clean(answer), index
   $stdout.puts
