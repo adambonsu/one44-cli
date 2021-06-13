@@ -6,7 +6,7 @@ require 'one44-cli/version'
 
 Gem::Specification.new do |s|
   s.name                  = 'one44-cli'
-  s.version               = One44::VERSION
+  s.version               = One44::CLI::VERSION
   s.platform              = Gem::Platform::RUBY
   s.summary               = %q{CLI User Interface for one44}
   s.description           = %q{Marks math problems'}
