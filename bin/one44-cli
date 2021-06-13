@@ -6,7 +6,6 @@ require 'one44'
 require 'one44/adaptors/io/cli'
 require 'one44-cli'
 
-
 include One44::Adaptors::IO::CLI
 include One44::CLI::Helpers
 include One44::CLI::Optparse

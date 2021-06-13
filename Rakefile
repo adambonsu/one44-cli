@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rubygems/package_task'
 spec = eval(File.read('one44-cli.gemspec'))
 
