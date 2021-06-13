@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version               = One44::CLI::VERSION
   s.platform              = Gem::Platform::RUBY
   s.summary               = 'CLI User Interface for one44'
-  s.description           = "Marks math problems"
+  s.description           = 'Marks math problems'
   s.authors               = ['Adam Bonsu']
   s.email                 = 'adam@bonsu.io'
   s.files                 = Dir['lib/**/*'] + Dir['bin/one44-cli']

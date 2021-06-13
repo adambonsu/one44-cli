@@ -1,0 +1,10 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  NewCops: enable
+
+Naming/FileName:
+  Exclude:
+    - 'lib/one44-cli.rb'
+
+Style/Documentation:
+  Enabled: false

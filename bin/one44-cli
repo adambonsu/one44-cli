@@ -10,13 +10,13 @@ include One44::Adaptors::IO::CLI
 include One44::CLI::Helpers
 include One44::CLI::Optparse
 
-test = One44::Test.new(STDOUT)
+test = One44::Test.new($stdout)
 test.start('indigo', randomise(questions))
 test.questions.each_with_index do |_question, index|
   test.provide clean(answer), index
-  STDOUT.puts
-  STDOUT.print "#{test.questions[index + 1]}: " unless test.questions[index] == test.questions.last
+  $stdout.puts
+  $stdout.print "#{test.questions[index + 1]}: " unless test.questions[index] == test.questions.last
 end
-STDOUT.print 'Result: '
-STDOUT.print test.result.to_s
-STDOUT.puts
+$stdout.print 'Result: '
+$stdout.print test.result.to_s
+$stdout.puts
