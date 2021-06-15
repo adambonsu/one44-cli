@@ -15,6 +15,11 @@ Gem::Specification.new do |s|
   s.files                 = Dir['lib/**/*'] + Dir['bin/one44-cli']
   s.executables           = %w[one44-cli]
   s.add_dependency 'one44', '0.0.2'
+  s.add_development_dependency('aruba', '1.1.1')
+  s.add_development_dependency('cucumber', '3.1.2')
+  s.add_development_dependency('rspec', '3.9.0')
+  s.add_development_dependency('rspec-wait', '0.0.9')
+  s.add_development_dependency('rubocop', '0.91.0')
   s.homepage              = 'https://github.com/adambonsu/one44-cli'
   s.license               = 'MIT'
   s.required_ruby_version = '>= 2.7.2'
