@@ -18,11 +18,16 @@ module One44
         opts.on('-s ORDER', '--sort-questions=ORDER', /^random$/i) do |order|
           $one44_cli_options[:question_order] = order.downcase.to_sym
         end
+
+        opts.on('-t TEST', '--path-to-test-file=TEST', '[Mandatory] Specify the path to the test file.') do |test|
+          $one44_cli_options[:test] = test
+        end
       end
       option_parser.parse!
 
-      unless $one44_cli_options&.dig(:question_order)
-        $one44_cli_options[:question_order] = :random unless $one44_cli_options&.dig(:random_sort_questions) == false
+      unless $one44_cli_options[:test]
+        puts option_parser.help
+        exit 1
       end
     end
   end

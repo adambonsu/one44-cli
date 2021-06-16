@@ -17,8 +17,8 @@ module One44
         questions.shuffle
       end
 
-      def questions
-        load_tests_from_csv_file('bin/tests/Advanced Indigo.txt', "\t\t")
+      def questions_from(test)
+        load_tests_from_csv_file(test, "\t\t")
       end
     end
   end

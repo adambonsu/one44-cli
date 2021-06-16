@@ -12,4 +12,4 @@ group :test do
   gem 'rubocop', '0.91.0'
 end
 
-gem 'one44', '0.0.3'
+gem 'one44', '0.0.4'

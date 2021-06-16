@@ -1,8 +1,9 @@
 .DS_Store
 .examples
+*.gem
 .idea
 .ruby-gemset
 .ruby-version
-*.gem
 GTD
 pkg
+tmp
