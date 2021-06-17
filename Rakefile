@@ -6,7 +6,7 @@ require 'rubygems/package_task'
 spec = instance_eval(File.read('one44-cli.gemspec'))
 
 Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "features --format pretty -x"
+  t.cucumber_opts = 'features --format pretty -x'
   t.fork = false
 end
 

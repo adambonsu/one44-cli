@@ -10,10 +10,11 @@ include One44::Adaptors::IO::CLI
 include One44::CLI::Helpers
 include One44::CLI::Optparse
 
+options = One44::CLI::Optparse::Parser.parse(ARGV)
 test = One44::Test.new($stdout)
 
-ordered_questions = $one44_cli_options[:question_order] == :random ? randomise(questions_from($one44_cli_options[:test])) : questions_from($one44_cli_options[:test])
-test.start($one44_cli_options[:test], ordered_questions)
+ordered_questions = options[:question_order] == :random ? randomise(questions_from(options[:test])) : questions_from(options[:test])
+test.start(options[:test], ordered_questions)
 test.questions.each_with_index do |_question, index|
   test.provide clean(answer), index
   $stdout.puts
