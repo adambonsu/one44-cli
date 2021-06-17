@@ -8,7 +8,7 @@ module One44
       class Parser
         def self.parse(args)
           options = {}
-          opts = OptionParser.new do |opts|
+          option_parser = OptionParser.new do |opts|
             opts.on('-r', '--random-sort-questions') do
               options[:random_sort_questions] = true
             end
@@ -25,20 +25,19 @@ module One44
               options[:test] = test
             end
           end
+          process_options(option_parser, options, args)
+        end
 
-          begin
-            opts.parse!(args)
-
-            unless options[:test]
-              puts option_parser.help
-              exit 1
-            end
-
-          rescue Exception => e
-            puts "Exception encountered: #{e}"
+        def self.process_options(option_parser, options, args)
+          option_parser.parse!(args)
+          unless options[:test]
+            puts option_parser.help
             exit 1
           end
           options
+        rescue Exception => e
+          puts "Exception encountered: #{e}"
+          exit 1
         end
       end
     end

@@ -13,6 +13,10 @@ module One44
         nil
       end
 
+      def ordered_questions(test, question_order)
+        question_order == :random ? randomise(questions_from(test)) : questions_from(test)
+      end
+
       def randomise(questions)
         questions.shuffle
       end
