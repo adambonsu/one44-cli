@@ -3,12 +3,7 @@
 Given('the {string} Test contains the following Questions:') do |test_name, questions|
   @test_name = test_name
   @questions = questions.raw.flatten
-  steps %(
-    Given a file named "#{@test_name}" with:
-      """
-      #{@questions.join("\n")}
-      """
-  )
+  write_file(@test_name, unescape_text(@questions.join("\n")))
 end
 
 When(/^I run one44-cli interactively: `([^`]*)`$/) do |cmd|
