@@ -11,14 +11,14 @@ Given('the {string} Test contains the following Questions:') do |test_name, ques
   )
 end
 
+When(/^I run one44-cli interactively: `([^`]*)`$/) do |cmd|
+  run_command(sanitize_text(cmd))
+end
+
 Then(/^the output should match "([^"]*)"$/) do |output|
-  steps %(
-    Then stdout should contain "#{output}"
-  )
+  expect(all_stdout).to include output
 end
 
 Then('I should be prompted to provide an answer to the first Question, {string}') do |first_question|
-  steps %(
-    Then stdout should contain "#{first_question}"
-  )
+  expect(all_stdout).to include first_question
 end
