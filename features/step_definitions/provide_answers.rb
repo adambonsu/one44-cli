@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 def provide_answer(answer)
-  type(unescape_text("#{answer}"))
+  type(unescape_text(answer.to_s))
 end
+
 def provide_test(questions, answers, expected_marks)
-  provide_answer  answers.join("\n")
+  provide_answer answers.join("\n")
   questions.each_with_index do |_question, index|
     provide_answer answers[index]
     expect(all_stdout).to include expected_marks[index]
