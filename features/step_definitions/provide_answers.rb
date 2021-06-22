@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-def provide_answer(answer)
-  type(unescape_text(answer.to_s))
-end
-
 def provide_test(answers)
-  provide_answer answers.join("\n")
+  type(unescape_text(answers.join("\n")))
 end
 
 Given('I provide the following Answers for these {string} Test Questions:') do |test_name, table|
