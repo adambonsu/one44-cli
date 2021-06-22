@@ -4,12 +4,8 @@ def provide_answer(answer)
   type(unescape_text(answer.to_s))
 end
 
-def provide_test(questions, answers, expected_marks)
+def provide_test(answers)
   provide_answer answers.join("\n")
-  questions.each_with_index do |_question, index|
-    provide_answer answers[index]
-    expect(all_stdout).to include expected_marks[index]
-  end
 end
 
 Given('I provide the following Answers for these {string} Test Questions:') do |test_name, table|
@@ -23,7 +19,7 @@ Given('I provide the following Answers for these {string} Test Questions:') do |
   create_test_file(@test_name, @questions.join("\n"))
 
   start_test("one44-cli -t '#{test_name}'")
-  provide_test(@questions, @answers, @expected_marks)
+  provide_test(@answers)
 end
 
 When('my Test Result will be {word}') do |result|
