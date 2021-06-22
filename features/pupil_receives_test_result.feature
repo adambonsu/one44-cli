@@ -3,9 +3,10 @@ Feature: Pupil Receives Test Result
   If you get all answers to test questions correct => you pass
   If you get one or more answers incorrect => you fail
 
+
   Scenario: Pupil answers all questions correctly - result is PASS
 
-    Given I provide the following Answers for these Test Questions:
+    Given I provide the following Answers for these "Advanced Indigo" Test Questions:
       | question | answer | mark    |
       | 1x5      | 5      | CORRECT |
       | 2x8      | 16     | CORRECT |
@@ -15,7 +16,7 @@ Feature: Pupil Receives Test Result
 
   Scenario: Pupil answers at least one question incorrectly - result is FAIL
 
-    Given I provide the following Answers for these Test Questions:
+    Given I provide the following Answers for these "Advanced Indigo" Test Questions:
       | question | answer | mark      |
       | 7x10     | 70     | CORRECT   |
       | 10x2     | 102    | INCORRECT |

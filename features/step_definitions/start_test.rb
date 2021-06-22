@@ -1,13 +1,18 @@
 # frozen_string_literal: true
 
+def start_test(command)
+  run_command(sanitize_text(command))
+end
+
 Given('the {string} Test contains the following Questions:') do |test_name, questions|
   @test_name = test_name
   @questions = questions.raw.flatten
-  write_file(@test_name, unescape_text(@questions.join("\n")))
+  create_test_file(@test_name, @questions.join("\n"))
 end
 
 When(/^I run one44-cli interactively: `([^`]*)`$/) do |cmd|
-  run_command(sanitize_text(cmd))
+  @one44_command = cmd
+  start_test(@one44_command)
 end
 
 Then(/^the output should match "([^"]*)"$/) do |output|
