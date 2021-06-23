@@ -4,7 +4,7 @@ Feature: Pupil Receives Test Result
   If you get one or more answers incorrect => you fail
 
 
-  Scenario: Pupil answers all questions correctly - result is PASS
+  Scenario: Pupil answers all questions correctly - Test Result is PASS
 
     Given I provide the following Answers for these "Advanced Indigo" Test Questions:
       | question | answer | mark    |
@@ -14,7 +14,7 @@ Feature: Pupil Receives Test Result
     Then my Test Result will be PASS
 
 
-  Scenario: Pupil answers at least one question incorrectly - result is FAIL
+  Scenario: Pupil answers at least one question incorrectly - Test Result is FAIL
 
     Given I provide the following Answers for these "Advanced Indigo" Test Questions:
       | question | answer | mark      |
