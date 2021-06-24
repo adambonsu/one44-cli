@@ -21,7 +21,7 @@ module One44
               options[:question_order] = order.downcase.to_sym
             end
 
-            opts.on('-t TEST', '--path-to-test-file=TEST', '[Mandatory] Specify the path to the test file.') do |test|
+            opts.on('-f TEST', '--path-to-test-file=TEST', '[Mandatory] Specify the path to the test file.') do |test|
               options[:test] = test
             end
           end
@@ -34,6 +34,7 @@ module One44
             puts option_parser.help
             exit 1
           end
+          options[:question_order] = :random if options[:random_sort_questions]
           options
         rescue Exception => e
           puts "Exception encountered: #{e}"

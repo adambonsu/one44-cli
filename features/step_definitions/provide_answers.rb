@@ -14,7 +14,7 @@ Given('I provide the following Answers for these {string} Test Questions:') do |
   @test_name = test_name
   create_test_file(@test_name, @questions.join("\n"))
 
-  @one44_command = "one44-cli -t '#{test_name}'"
+  @one44_command = "one44-cli -f '#{test_name}'"
   start_test(@one44_command)
   provide_test(@answers.join("\n"))
 end
@@ -28,7 +28,7 @@ When(/I provide a(?:n in| )correct Answer to a Test Question:/) do |table|
   @test_name = 'test'
   create_test_file(@test_name, @questions.join("\n"))
 
-  @one44_command = "one44-cli -t '#{@test_name}'"
+  @one44_command = "one44-cli -f '#{@test_name}'"
   start_test(@one44_command)
   provide_test(@answers.join("\n"))
 end

@@ -8,7 +8,17 @@ Install the gem:
 `gem install one44-cli`
 
 ## How to use
-$`one44-cli -t path/to/test/file`
+Create a test file containing math problems:
+
+E.g
+```testfileexample
+1x1		2x2		3x3
+4x4		5x5		6x6
+```
+
+Run `one44-cli` as follows:
+
+$`one44-cli -f path/to/test/file`
 
 ### Do not randomly order test questions (default)
 Test questions will be ordered as listed in the test file if the `--not-random-sort-questions` is specified:
@@ -16,9 +26,7 @@ Test questions will be ordered as listed in the test file if the `--not-random-s
 $`one44-cli --not-random-sort-questions`
 
 ### Randomly order test questions
-Test questions are randomly ordered. Make the behaviour explicit by specifying one of the options below:
-
-$`one44-cli`
+Test questions are randomly ordered by specifying one of the options below:
 
 $`one44-cli -r`
 
